@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Monkey Jungle</title>
+  <!-- Opened from the Home Screen, the game runs full screen with no browser bars. -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icon-180.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Monkey Jungle">
+  <meta name="theme-color" content="#3ddc84">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Source+Sans+3:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    { "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    } }
+  </script>
+</head>
+<body>
+  <div id="game"></div>
+
+  <div id="hud" class="hidden">
+    <div class="hud-group">
+      <div class="pill">🍌 <span id="hud-bananas">0</span></div>
+      <div class="pill">⭐ <span id="hud-score">0</span></div>
+      <div class="pill">❤️ <span id="hud-lives">3</span></div>
+      <div class="pill stamina" id="hud-stamina-pill" role="meter" aria-label="Sprint stamina"
+           aria-valuemin="0" aria-valuemax="100" aria-valuenow="100">
+        <span class="bolt">⚡</span>
+        <div class="bar"><div class="fill" id="hud-stamina"></div></div>
+      </div>
+    </div>
+    <div class="hud-group">
+      <div class="pill">🌴 <span id="hud-level">1</span></div>
+      <div class="pill">⏱ <span id="hud-time">0:00</span></div>
+      <button id="btn-mute" class="pill icon" aria-label="Toggle sound">🔊</button>
+      <button id="btn-pause" class="pill icon" aria-label="Pause">⏸</button>
+    </div>
+  </div>
+
+  <div id="overlay" role="dialog" aria-live="polite"></div>
+
+  <div id="padview" class="hidden"></div>
+
+  <div id="touchpad" class="hidden"></div>
+
+  <div id="toast"></div>
+
+  <div id="rotate" aria-live="polite"><div>📱↻</div><p>Turn your phone sideways to play</p></div>
+
+  <noscript>Monkey Jungle needs JavaScript to run.</noscript>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
